@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CommanUtils</string>
+    <string name="lbl_takephoto">Take Photo</string>
+    <string name="lbl_choosephoto">Choose from Gallery</string>
+    <string name="lbl_cancel">Cancel</string>
+    <string name="lbl_add_pic">Add \nprofile Picture</string>
+    <string name="lbl_removephoto">Remove Photo</string>
+    <string name="msg_permission_required">Please enable this feature on your device settings</string>
+    <string name="goto_settings">Go to Settings</string>
+    <string name="lbl_ok">OK</string>
+    <string name="btn_cancel">CANCEL</string>
+</resources>

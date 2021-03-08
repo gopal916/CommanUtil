@@ -1,0 +1,3 @@
+include ':CommanUtilsLib'
+include ':app'
+rootProject.name = "CommanUtils"
