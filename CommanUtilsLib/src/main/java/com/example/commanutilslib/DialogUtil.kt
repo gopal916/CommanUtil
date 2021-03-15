@@ -1,12 +1,14 @@
 package com.example.mylibrary
 
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import android.graphics.drawable.InsetDrawable
 import android.net.Uri
 import android.provider.Settings
@@ -59,24 +61,7 @@ object DialogUtil {
 
     }
 
-    fun showGroupCallDialog(context: Context, message: String, okText: String) {
-        val dialog = Dialog(context, R.style.custom_alert_dialog)
-        dialog.setCancelable(false)
-        dialog.setContentView(R.layout.custom_popup_dialog)
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        val mOk: AppCompatTextView = dialog.findViewById(R.id.lblYes)
-        val mCancel: AppCompatTextView = dialog.findViewById(R.id.lblCancel)
-        mCancel.visibility = View.GONE
-        val mText: AppCompatTextView = dialog.findViewById(R.id.lblMessage)
-        mOk.text = okText
-        mOk.background = (ContextCompat.getDrawable(context, R.drawable.bg_red))
-        mText.text = message
-        dialog.show()
-        mOk.setOnClickListener {
-            dialog.dismiss()
-        }
 
-    }
 
     fun showOkGreenDialog(
         context: Context,
@@ -144,7 +129,7 @@ object DialogUtil {
 
 
 
-    /*@SuppressLint("UseCompatLoadingForDrawables")
+    @SuppressLint("UseCompatLoadingForDrawables")
     fun showOkCancelImageGreenDialog(
         context: Context, message: String, okText: String, cancelText: String,
         callBack: OkCancelDialogInterface
@@ -173,7 +158,7 @@ object DialogUtil {
             dialog.dismiss()
             callBack.cancel()
         }
-    }*/
+    }
 
     fun showOkCancelTitleGreenDialog(
         context: Context, message: String, okText: String, cancelText: String, title: String,
@@ -279,7 +264,7 @@ object DialogUtil {
     }
 
     fun dialogGoToSetting(context: Context){
-        DialogUtil.showOkCancelGreenDialog(
+        showOkCancelGreenDialog(
             context,
             context.getString(R.string.msg_permission_required),
             context.getString(R.string.goto_settings),
